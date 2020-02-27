@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 import movies from './data';
+import MoviesList from "./MoviesList"
 
 export default class App extends React.Component {
   render() {
-    console.log(movies.results);
+    // console.log(movies.results);
     return (
       <div className="App">
-        <header className="App-header">
-
-        </header>
+        <MoviesList list={movies.results} />
+        
       </div>
     );
   }

@@ -62,6 +62,7 @@ export default function PrimarySearchAppBar() {
     <Menu
       id={menuId}
       keepMounted
+      open={false}
     >
     </Menu>
   );

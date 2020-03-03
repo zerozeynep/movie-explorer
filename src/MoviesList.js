@@ -5,6 +5,8 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import MovieDetail from './MovieDetail'
+
 
 
 
@@ -22,7 +24,7 @@ export default class MoviesList extends Component {
                 <Paper>
 
                     <Card >
-                        <CardActionArea>
+                        <CardActionArea onClick={this.props.MovieDetail} >
                             
                             <CardContent>
                                 <img src={baseURL + movie.poster_path} width="100%" alt="Poster" />

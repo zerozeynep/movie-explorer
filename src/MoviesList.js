@@ -1,24 +1,47 @@
 import React, { Component } from 'react'
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+
+
+
+
 
 export default class MoviesList extends Component {
+
+
     render() {
-        const baseURL= "http://image.tmdb.org/t/p/w1280/"
+
+        const baseURL = "http://image.tmdb.org/t/p/w1280/"
         // console.log(this.props.list) 
-        const list = this.props.list.map(movie => 
-            <div key={movie.id}>
-                <h1>{movie.original_title}</h1>
-                <img src={baseURL + movie.poster_path} width="600" alt="Poster" />
+        const list = this.props.list.map(movie =>
+            <Grid item xs={4}>
+                <Paper>
+
+                    <Card >
+                        <CardActionArea>
+                            
+                            <CardContent>
+                                <img src={baseURL + movie.poster_path} width="100%" alt="Poster" />
+                                <Typography gutterBottom variant="h5" component="h2">
+                                    {movie.original_title}
+                                </Typography>
+                               
+                            </CardContent>
+                        </CardActionArea>
+                    </Card>
+                </Paper>
+            </Grid>
+        )
+        return (
+            <div>
+                <Grid container spacing={3}>
+                    {list}
+                </Grid>
             </div>
-    )      
-        return <div>
-            {
-                this.props.list.map(movie => 
-                    <div key={movie.id}>
-                        <h1>{movie.original_title}</h1>
-                        <img src={baseURL + movie.poster_path} width="600" alt="Poster" />
-                    </div>
-            )      
-            }
-        </div>
+        );
     }
 }

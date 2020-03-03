@@ -7,12 +7,9 @@ import Header from "./Header"
 export default class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
+      <div>
           <Header />
-        </div>
-          <MoviesList list={movies.results} />
-        
+          <MoviesList list={movies.results} />        
       </div>
     );
   }

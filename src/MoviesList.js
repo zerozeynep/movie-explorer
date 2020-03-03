@@ -37,7 +37,7 @@ export default class MoviesList extends Component {
             </Grid>
         )
         return (
-            <div>
+            <div className="main">
                 <Grid container spacing={3}>
                     {list}
                 </Grid>
